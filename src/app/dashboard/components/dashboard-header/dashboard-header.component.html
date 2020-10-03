@@ -1,5 +1,5 @@
-<div class="container">
-  <ng-container *ngFor="let i of [1,2,3]">
-    <aifora-dashboard-bucket [percent]="55"></aifora-dashboard-bucket>
+<div class="container" *ngIf="buckets && buckets.length">
+  <ng-container *ngFor="let bucket of buckets">
+    <aifora-dashboard-bucket [bucketData]="bucket"></aifora-dashboard-bucket>
   </ng-container>
 </div>
