@@ -1,5 +1,4 @@
 <div class="container" *ngIf="buckets && buckets.length">
-
   <div class="first-column">
     <div class="info">
       <div>{{additionalDashboardInfos.totalStock}} <span class="text">Total Stock</span></div>
@@ -7,13 +6,36 @@
     </div>
 
     <div class="amount">{{additionalDashboardInfos.amount}} %</div>
+    <img class="bracket" [src]="imgPath"/>
   </div>
 
-  <ng-container *ngFor="let bucket of buckets">
-    <aifora-dashboard-bucket
-      [bucketData]="bucket"
-      [active]="activeBucket === bucket.id"
-      (selectedBucket)="onSelectedBucket($event)">
-    </aifora-dashboard-bucket>
-  </ng-container>^
+  <div class="second-column">
+
+    <div class="bucket-area">
+      <ng-container *ngFor="let bucket of buckets">
+        <aifora-dashboard-bucket
+          [bucketData]="bucket"
+          [active]="activeBucket === bucket.id"
+          (selectedBucket)="onSelectedBucket($event)">
+        </aifora-dashboard-bucket>
+      </ng-container>
+    </div>
+
+    <div class="footer">
+      <div class="checkbox-area">
+        <div class="success-area">
+          <input type="checkbox" name="checkbox" id="success-checkbox" value="value">
+          <label for="success-checkbox">{{additionalDashboardInfos.successes}} Successes</label>
+        </div>
+
+        <div class="exceptions-area">
+          <input type="checkbox" name="checkbox" id="exceptions-checkbox" value="value">
+          <label for="exceptions-checkbox">{{additionalDashboardInfos.exceptions}} Exceptions</label>
+        </div>
+      </div>
+
+      <button class="btn" [disabled]="activeBucketName !== 'planned'" [class.active]="activeBucketName === 'planned'">Upload to ERP</button>
+    </div>
+
+  </div>
 </div>

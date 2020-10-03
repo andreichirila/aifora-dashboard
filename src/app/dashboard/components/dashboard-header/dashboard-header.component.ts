@@ -19,12 +19,17 @@ export class DashboardHeaderComponent {
   @Input()
   public activeBucket: number;
 
-  @Output() selectedBucket = new EventEmitter<number>();
+  @Input()
+  public activeBucketName: string;
+
+  @Output() selectedBucket = new EventEmitter<Bucket>();
+
+  public imgPath = '../assets/images/bracket.svg';
 
   constructor() {
   }
 
-  public onSelectedBucket($event: number) {
+  public onSelectedBucket($event: Bucket) {
     this.selectedBucket.emit($event);
   }
 

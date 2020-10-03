@@ -1,10 +1,10 @@
-<a [queryParams]="{ activeBucket: bucketData.id }"
+<a [queryParams]="{ activeBucket: bucketData.id, bucketName: bucketData.name.toLowerCase() }"
    [routerLink]="['/']" class="bucket">
   <aifora-dashboard-circle
     [value]="bucketData.percentage"
     [active]="active">
   </aifora-dashboard-circle>
-  <div class="info">
+  <div class="info" [class.active]="active">
     <div class="name">{{bucketData.name}}</div>
     <div class="amount">{{bucketData.amount}}</div>
   </div>

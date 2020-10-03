@@ -1,12 +1,77 @@
 :host {
   display: block;
+}
 
-  .container {
+.container {
+  display: flex;
+  align-items: flex-start;
+  padding: 1rem;
+  height: 10rem;
+  background-color: #EDEEF0;
+  border-radius: .5rem;
+
+  .first-column {
+    color: darkgrey;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 1rem;
-    height: 20rem;
-    background-color: #EDEEF0;
+    flex: 1;
+
+    .text {
+      font-weight: 800;
+    }
+
+    .amount {
+      background-color: darkgrey;
+      color: snow;
+      width: 8rem;
+      height: 8rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: .5rem;
+    }
+
+    .bracket {
+      width: 2rem;
+    }
+  }
+
+  .second-column {
+    flex: 3;
+
+    .bucket-area {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 }
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: .5rem;
+
+  .checkbox-area {
+    display: flex;
+  }
+
+  .btn {
+    border: none;
+    border-radius: .5rem;
+    font-size: 1rem;
+    background-color: darkgrey;
+    padding: .5rem;
+    color: lightgrey;
+    width: 12rem;
+
+    &.active {
+      cursor: pointer;
+      background-color: aliceblue;
+      color: #ff00ba;
+      border: 1px solid #ff00ba;
+    }
+  }
+}
+
