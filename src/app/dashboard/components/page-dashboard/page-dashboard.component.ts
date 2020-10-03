@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {DashboardService} from '../../services/dashboard.service';
+import {map} from 'rxjs/operators';
+import {Observable} from 'rxjs';
+import {Bucket} from '../../interfaces/bucket';
 
 @Component({
   selector: 'aifora-page-dashboard',
@@ -7,9 +11,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageDashboardComponent implements OnInit {
 
-  constructor() { }
+  public buckets$: Observable<Bucket[]>;
 
-  ngOnInit() {
+  constructor(private dashboardService: DashboardService) {
   }
 
+  ngOnInit() {
+    this.initStreams();
+  }
+
+  private initStreams() {
+    this.buckets$ = this.dashboardService.getDashboardDummyData().pipe(map((res) => res.buckets));
+  }
 }

@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {Bucket} from '../../interfaces/bucket';
 
 @Component({
   selector: 'aifora-dashboard-bucket',
@@ -8,7 +9,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class DashboardBucketComponent implements OnInit {
 
   @Input()
-  public percent: number = 0;
+  public bucketData: Bucket;
 
   @Input()
   public active: number = 0;

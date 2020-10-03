@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Bucket} from '../../interfaces/bucket';
 
 @Component({
   selector: 'aifora-dashboard-header',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardHeaderComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  public buckets: Bucket[];
+
+  constructor() {
+  }
 
   ngOnInit() {
+    console.log(this.buckets);
   }
 
 }
