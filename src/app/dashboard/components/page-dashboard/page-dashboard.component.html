@@ -3,6 +3,7 @@
     [buckets]="buckets$ | async"
     [additionalDashboardInfos]="additionalDashboardInfos$ | async"
     [activeBucket]="activeBucketId$ | async"
+    [activeBucketName]="activeBucketName$ | async"
     (selectedBucket)="onSelectedBucketHeader($event)">
   </aifora-dashboard-header>
 </div>

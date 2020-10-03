@@ -16,6 +16,7 @@ export class PageDashboardComponent implements OnInit {
   public buckets$: Observable<Bucket[]>;
   public additionalDashboardInfos$: Observable<AdditionalDashboardInfos>;
   public activeBucketId$: Observable<number>;
+  public activeBucketName$: Observable<string>;
 
   constructor(private dashboardService: DashboardService,
               private activatedRoute: ActivatedRoute) {
@@ -29,9 +30,10 @@ export class PageDashboardComponent implements OnInit {
     this.buckets$ = this.dashboardService.getDashboardDummyData().pipe(map((res) => res.buckets));
     this.additionalDashboardInfos$ = this.dashboardService.getDashboardDummyData().pipe(map((res) => res.dashboardAdditionalsInfo));
     this.activeBucketId$ = this.activatedRoute.queryParams.pipe(map((queryParams) => +queryParams.activeBucket || 1));
+    this.activeBucketName$ = this.activatedRoute.queryParams.pipe(map((queryParams) => queryParams.bucketName || undefined));
   }
 
-  public onSelectedBucketHeader(e: number) {
+  public onSelectedBucketHeader(e: Bucket) {
     /*
     * Here we could make a specific API request for only one Bucket.
     * For this test we will just retrieve all dummy Bucket Data
