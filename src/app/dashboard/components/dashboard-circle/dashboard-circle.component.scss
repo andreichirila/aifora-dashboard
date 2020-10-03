@@ -20,10 +20,18 @@
 }
 
 .progress-meter {
-  stroke: #C6C7CF;
+  stroke: #C8C8C8;
+
+  &.active {
+    stroke: #C6C7CF;
+  }
 }
 
 .progress-value {
-  stroke: #4caf50;
+  stroke: #A9A9A9;
+
+  &.active {
+    stroke: #4caf50;
+  }
   transition: all;
 }

@@ -1,12 +1,14 @@
-import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 
 @Component({
   selector: 'aifora-dashboard-circle',
   templateUrl: './dashboard-circle.component.html',
-  styleUrls: ['./dashboard-circle.component.scss']
+  styleUrls: ['./dashboard-circle.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DashboardCircleComponent implements OnInit, OnChanges {
 
+  @Input() active: boolean = false;
   @Input() value: number = 0;
 
   public readonly radius = 54;
@@ -25,7 +27,7 @@ export class DashboardCircleComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    if (changes.value.currentValue !== changes.value.previousValue) {
+    if (changes.value && (changes.value.currentValue !== changes.value.previousValue)) {
       this.progress(changes.value.currentValue);
     }
   }

@@ -1,7 +1,11 @@
-<div class="bucket">
-  <aifora-dashboard-circle [value]="bucketData.percentage"></aifora-dashboard-circle>
+<a [queryParams]="{ activeBucket: bucketData.id }"
+   [routerLink]="['/']" class="bucket">
+  <aifora-dashboard-circle
+    [value]="bucketData.percentage"
+    [active]="active">
+  </aifora-dashboard-circle>
   <div class="info">
     <div class="name">{{bucketData.name}}</div>
     <div class="amount">{{bucketData.amount}}</div>
   </div>
-</div>
+</a>
