@@ -1,0 +1,6 @@
+<div class="value-text">{{percentageText}}</div>
+<svg width="120" height="120" viewBox="0 0 120 120" class="progress-svg">
+  <circle [attr.r]="radius" cx="60" cy="60" stroke-width="12" class="progress-meter"/>
+  <circle [style.strokeDasharray]="circumference" [style.strokeDashoffset]="dashoffset" [attr.r]="radius" cx="60"
+          cy="60" stroke-width="12" class="progress-value"/>
+</svg>

@@ -1,0 +1,29 @@
+:host {
+  display: block;
+  position: relative;
+}
+
+.value-text {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+}
+
+.progress-svg {
+  transform: rotate(-90deg);
+  position: relative;
+}
+
+.progress-meter,
+.progress-value {
+  fill: none;
+}
+
+.progress-meter {
+  stroke: #C6C7CF;
+}
+
+.progress-value {
+  stroke: #4caf50;
+  transition: all;
+}

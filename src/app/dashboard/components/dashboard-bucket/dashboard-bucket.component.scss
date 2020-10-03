@@ -1,0 +1,17 @@
+:host {
+  display: block;
+}
+
+.bucket {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .info {
+    margin-left: 5px;
+    display: flex;
+    flex-flow: column;
+  }
+}
+
+
