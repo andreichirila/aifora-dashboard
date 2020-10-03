@@ -4,6 +4,7 @@ import {PageDashboardComponent} from './components/page-dashboard/page-dashboard
 import {DashboardHeaderComponent} from './components/dashboard-header/dashboard-header.component';
 import {DashboardBucketComponent} from './components/dashboard-bucket/dashboard-bucket.component';
 import {DashboardCircleComponent} from './components/dashboard-circle/dashboard-circle.component';
+import {RouterModule} from '@angular/router';
 
 const components = [];
 
@@ -13,7 +14,8 @@ const components = [];
     PageDashboardComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ]
 })
 export class PageDashboardModuleModule {

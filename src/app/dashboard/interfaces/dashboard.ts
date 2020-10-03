@@ -1,9 +1,7 @@
 import {Bucket} from './bucket';
+import {AdditionalDashboardInfos} from './additional-dashboard-infos';
 
 export interface Dashboard {
   buckets: Bucket[];
-  totalStock: number;
-  inPlanning: number;
-  successes: number;
-  exceptions: number;
+  dashboardAdditionalsInfo: AdditionalDashboardInfos;
 }

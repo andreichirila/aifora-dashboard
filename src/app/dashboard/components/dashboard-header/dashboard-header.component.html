@@ -1,5 +1,19 @@
 <div class="container" *ngIf="buckets && buckets.length">
+
+  <div class="first-column">
+    <div class="info">
+      <div>{{additionalDashboardInfos.totalStock}} <span class="text">Total Stock</span></div>
+      <div>{{additionalDashboardInfos.inPlanning}} <span class="text">In Planning</span></div>
+    </div>
+
+    <div class="amount">{{additionalDashboardInfos.amount}} %</div>
+  </div>
+
   <ng-container *ngFor="let bucket of buckets">
-    <aifora-dashboard-bucket [bucketData]="bucket"></aifora-dashboard-bucket>
-  </ng-container>
+    <aifora-dashboard-bucket
+      [bucketData]="bucket"
+      [active]="activeBucket === bucket.id"
+      (selectedBucket)="onSelectedBucket($event)">
+    </aifora-dashboard-bucket>
+  </ng-container>^
 </div>
