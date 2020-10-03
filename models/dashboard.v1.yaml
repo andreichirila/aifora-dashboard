@@ -1,0 +1,11 @@
+title: dashboard
+type: object
+x-tags:
+  - dashboard
+  - aifora
+properties:
+  id:
+    type: string
+x-examples:
+  example-1:
+    id: string
